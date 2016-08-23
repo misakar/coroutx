@@ -1,0 +1,3 @@
+**/*.pyc
+coroutx.egg-info/
+venv/

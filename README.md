@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="http://ww4.sinaimg.cn/large/a15b4afegw1f6k20fb3p5j205o05ogli" alt="vuepack" width="60">
-  <br><br><strong>CoroutX</strong> dead simple python async web framework <br>which use coroutine.
+  <img src="http://7xj431.com1.z0.glb.clouddn.com/coroutx.png" alt="coroutx">
+  <br><br><strong>CoroutX</strong> dead simple python async web framework <br>based on coroutine.
 </p>
 
 ## Benchmark
@@ -30,27 +30,27 @@
         app.firing(debug=True)
 
 ## API
-```class coroutx.Coroutx()```
+```class coroutx.Coroutx()``` <br/>
 
     the coroutx object implements a WSGI application and acts as the central object. 
 
-```coroutx.current_app```
+```coroutx.current_app``` <br/>
 
     return the current coroutx application
     
-```coroutx._request_ctx_hub```
+```coroutx._request_ctx_hub``` <br/>
 
     a coroutine(gevent) local object, store the global request context.
 
-```class coroutx.CoroutxResponse```
+```class coroutx.CoroutxResponse``` <br/>
 
     coroutx response class
 
-```class coroutx.CoroutxRequest```
+```class coroutx.CoroutxRequest``` <br/>
 
     coroutx request class
     
-```function coroutx.route(app, rule)```
+```function coroutx.route(app, rule)``` <br/>
 
     coroutx app route decorator, add url rule.
 

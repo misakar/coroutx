@@ -3,7 +3,45 @@
 </p>
 
 ## Benchmark
+```(coroutx vs flask)``` <br/>
+Results bellow were received with MacBook Air, CPU: 1.6 GHz i5, MEM: 4GB, OSX 10.10.4. I've used a [siege](https://github.com/JoeDog/siege) utility with params: <br/>
 
+    $ siege -c 200 -r 10 [url]
+
+The tests were running from gevent pywsgi server <br/>
++ [flask]() <br/>
+
+code see [benchmark]() <br/>
+Results: <br/>
+coroutx:
+
+    Transactions:		        1000 hits
+    Availability:		      100.00 %
+    Elapsed time:		        3.34 secs
+    Data transferred:	        0.01 MB
+    Response time:		        0.07 secs
+    Transaction rate:	      299.40 trans/sec
+    Throughput:		        0.00 MB/sec
+    Concurrency:		       20.72
+    Successful transactions:        1000
+    Failed transactions:	           0
+    Longest transaction:	        0.29
+    Shortest transaction:	        0.00
+
+flask:
+
+    Transactions:		        1000 hits
+    Availability:		      100.00 %
+    Elapsed time:		        3.32 secs
+    Data transferred:	        0.01 MB
+    Response time:		        0.04 secs
+    Transaction rate:	      301.20 trans/sec
+    Throughput:		        0.00 MB/sec
+    Concurrency:		       12.05
+    Successful transactions:        1000
+    Failed transactions:	           0
+    Longest transaction:	        0.18
+    Shortest transaction:	        0.00
 
 ## Example
 

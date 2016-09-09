@@ -28,7 +28,6 @@ setup(
         'gevent',
     ],
     classifiers=[
-        'Development Status :: 0 - Beta',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',

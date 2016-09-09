@@ -49,6 +49,11 @@ class Coroutx(object):
         return rv
 
     def dispatch_request(self):
+        """
+        同步的dispatch -> 协程中执行
+        request -> function -> response HTTP连接结束
+        function -> 线程中执行
+        """
         try:
             endpoint, values = self.match_request()
             return self.route_functions[endpoint](**values)

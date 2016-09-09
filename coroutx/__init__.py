@@ -9,4 +9,4 @@ from .reqctx import CoroutxRequest
 from .route import route
 
 
-version = '0.10-dev'
+version = '0.10-dev1'

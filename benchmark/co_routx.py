@@ -1,5 +1,6 @@
 # coding: utf-8
 
+import time
 from coroutx import Coroutx, request, route, current_app
 
 
@@ -10,6 +11,12 @@ app = Coroutx()
 @app.tojson
 def hello():
     return 'hello coroutx'
+
+@route(app, '/timeout/')
+@app.tojson
+def timeout():
+    time.sleep(5)
+    return "timeout"
 
 
 if __name__ == '__main__':

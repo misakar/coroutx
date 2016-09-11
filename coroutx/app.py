@@ -85,8 +85,8 @@ class Coroutx(object):
             if self.debug:
                 from werkzeug.debug import DebuggedApplication
                 app = DebuggedApplication(self, evalex=True)
-            else:
-                app = self
+        else:
+            app = self
         print """coroutx app running on {%s => %s}\n""" % (host, port)
         WSGIServer((host, port), app).serve_forever()
 

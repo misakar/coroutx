@@ -1,0 +1,2 @@
+http://localhost:5000/hello/
+http://localhost:5000/timeout/

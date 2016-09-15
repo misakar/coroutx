@@ -10,7 +10,19 @@
 """
 
 import functools
-from werkzeug.routing import Rule
+from werkzeug.routing import Rule, Map
+
+
+class CoroutxRuleMap(Map):
+    """
+    app.url_map.yo(app, path='/ping/', methods=['GET'], handler=yo)
+    """
+    def yo(self, app, rule, methods, handler):
+        endpoint = handler.__name__
+        app.url_map.add(Rule(
+            rule=rule, methods=methods, endpoint=endpoint
+        ))
+        app.route_functions[endpoint] = handler
 
 
 def route(app, rule, **options):

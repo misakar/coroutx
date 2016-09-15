@@ -10,8 +10,7 @@
     :license: MIT, see LICENSE for more details.
 """
 
-# from gevent.wsgi import WSGIServer
-from gevent.local import local
+from gevent.local import local  # greenlet
 from werkzeug.local import LocalProxy
 
 

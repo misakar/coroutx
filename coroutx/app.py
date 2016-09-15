@@ -13,6 +13,7 @@ import json
 import functools
 from werkzeug.routing import Map
 from werkzeug.exceptions import HTTPException
+from .route import CoroutxRuleMap
 from .response import CoroutxResponse
 from .reqctx import CoroutxRequest, requestcontext
 from .hub import _request_ctx_hub, request
@@ -35,7 +36,7 @@ class Coroutx(object):
         self.debug = False
         self.route_functions = {}  # store route function
         self.error_handlers = {}
-        self.url_map = Map()  # url map rules
+        self.url_map = CoroutxRuleMap()
 
     def errorhandler(self, code):
         def decorator(f):
@@ -86,9 +87,9 @@ class Coroutx(object):
                 from werkzeug.debug import DebuggedApplication
                 app = DebuggedApplication(self, evalex=True)
         else:
-            app = self
+            _app = self
         print """coroutx app running on {%s => %s}\n""" % (host, port)
-        WSGIServer((host, port), app).serve_forever()
+        WSGIServer((host, port), _app).serve_forever()
 
     def wsgi_app(self, environ, start_response):
         # actual wsgi application.

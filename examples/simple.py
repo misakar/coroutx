@@ -1,7 +1,7 @@
 # coding: utf-8
 
 import gevent
-from coroutx import Coroutx, request, route, current_app
+from coroutx import Coroutx, request, route, current_app, url_map
 
 
 app = Coroutx()
@@ -31,5 +31,7 @@ def hello2():
     }, headers
 
 
-if __name__ == '__main__':
-    app.firing()
+#url_map.yo(app, rule='/hello/', methods=['GET'], handler=hello)
+#url_map.yo(app, rule='/hello/', methods=['GET'], handler=hello2)
+
+app.firing(host='localhost', port=8090)

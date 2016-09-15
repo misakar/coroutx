@@ -15,7 +15,8 @@ def hello():
 @route(app, '/timeout/')
 @app.tojson
 def timeout():
-    time.sleep(5)
+    # time.sleep(60)
+    time.sleep(6)
     return "timeout"
 
 

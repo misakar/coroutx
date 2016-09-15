@@ -32,6 +32,6 @@ def requestcontext(app, environ):
     _request_ctx_hub.url_adapter = app.url_map.bind_to_environ(environ)
     _request_ctx_hub.request = CoroutxRequest(environ)
     try:
-        yield  _request_ctx_hub  # coroutine stack switch
+        yield  _request_ctx_hub  # request context switch
     finally:
         _request_ctx_hub.request = None  # clean up
